@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  WeSplit
-//
-//  Created by Alexander Adgebenro on 5/28/22.
-//
 
 import SwiftUI
 
@@ -35,14 +29,6 @@ struct ContentView: View {
         return grandTotal
     }
 
-//    var currencyFormatter: Double {
-//        let formatter = (FloatingPointFormatStyle<Double>.Currency.self)
-//
-//
-//        return currencyFormatter
-//    }
-//
-    
     var body: some View {
         NavigationView {
             Form {
@@ -78,6 +64,7 @@ struct ContentView: View {
                 }
                 Section {
                     Text(totalAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                        .foregroundColor( tipPercentage == 0 ? .red : .primary)
                 } header: {
                     Text("Total Amount")
                 }
